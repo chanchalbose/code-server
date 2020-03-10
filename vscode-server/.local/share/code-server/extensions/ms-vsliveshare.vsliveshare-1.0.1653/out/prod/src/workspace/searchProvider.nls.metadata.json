@@ -1,0 +1,9 @@
+{
+	"messages": [
+		"The result set contains only a subset of all matches. Please be more specific in your search to narrow down the results."
+	],
+	"keys": [
+		"info.SearchResultsLimited"
+	],
+	"filePath": "src\\workspace\\searchProvider"
+}

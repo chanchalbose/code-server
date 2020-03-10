@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Model Template</title>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style type="text/css">
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../static/js/particles.js"></script>
+  
+</head>
+
+<body>
+  <div id="particles-js">
+    <!-- scripts -->
+    
+     <script src="../static/js/app.js"></script>
+ <div class="build" style="left: 45%; overflow: auto;">
+    <form action="/">
+        <div style="text-align: center;">
+          <br>
+            <h1 class="headertext">Chat Classifier</h1>
+            <br>
+            Input a word or phrase to get its toxicity levels:
+            <br>
+            <br>
+            <center>
+              <input style="text-align: center;" type="text" name="chat_in" autofocus="autofocus" value="{{x_input}}" maxlength="500" id="rcorners2">
+            </center>
+        <br>
+        <!-- Submit button -->
+        <center>
+        <input style="text-align: center;" type="submit" value="Submit" method="get" id="rcorners1">
+      </center>
+        <br>
+    
+      </form>
+        </div>
+        <!-- {% for p in prediction %}
+          <br>  {{p['name']}}:{{ (100*p['prob']) | round }}%
+        {% endfor %} -->
+      </p>
+              <table>
+                <thead>
+                  <tr class="table100-head">
+                    <th class="column1">String Input</th>
+                    <th colspan="2" class="column1">Toxicity Levels (Predictions)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td rowspan="6" class="column1">{{ chat_in }}</td>
+                      <!-- <td rowspan="6" class="column1">{{ chat_in }}</td> -->
+                      <td class="column1">{{prediction[0]['name']}}</td>
+                      <td class="column2">{{ (100 * prediction[0]['prob']) | round}}%</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">{{prediction[1]['name']}}</td>
+                      <td class="column2">{{ (100 * prediction[1]['prob']) | round}}%</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">{{prediction[2]['name']}}</td>
+                      <td class="column2">{{ (100 * prediction[2]['prob']) | round}}%</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">{{prediction[3]['name']}}</td>
+                      <td class="column2">{{ (100 * prediction[3]['prob']) | round}}%</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">{{prediction[4]['name']}}</td>
+                      <td class="column2">{{ (100 * prediction[4]['prob']) | round}}%</td>
+                    </tr>
+                    <tr>
+                      <td class="column1">{{prediction[5]['name']}}</td>
+                      <td class="column2">{{ (100 * prediction[5]['prob']) | round}}%</td>
+                </tbody>
+              </table>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+   </div>
+</body>
+</html>
